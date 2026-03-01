@@ -106,7 +106,7 @@ export default function Page() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-primary text-primary" />
+                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
             <h2 className="text-4xl md:text-5xl font-thin text-foreground mb-4">Mechanics Who Revved Up Their Business</h2>
@@ -131,11 +131,11 @@ export default function Page() {
                 shop: "Walker's Garage"
               }
             ].map((testimonial, i) => (
-              <Card key={i} className="bg-card border-border">
+              <Card key={i} className="bg-gradient-to-br from-blue-50 to-cyan-50 border-border">
                 <CardContent className="p-8">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                      <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                   <p className="text-foreground mb-6 leading-relaxed">"{testimonial.quote}"</p>
@@ -151,26 +151,26 @@ export default function Page() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32">
-        <Card className="bg-gradient-to-br from-card to-secondary border-border">
-          <CardContent className="p-12 md:p-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-thin text-foreground mb-6 text-balance">
+      <section id="cta" className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 text-balance">
               {'Start growing your shop with AI today'}
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
               {'Get started with Outrev today and start capturing calls, booking jobs, and growing your shop immediately.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6">
+              <Button size="lg" className="bg-white hover:bg-white/90 text-blue-600 font-bold text-lg px-10 py-7">
                 Schedule Your Free Demo
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-muted-foreground/30 hover:bg-muted bg-transparent">
+              <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-2 border-white text-lg px-10 py-7">
                 Call 1-888-221-6878
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-6">{'No credit card required • Setup in under 24 hours'}</p>
-          </CardContent>
-        </Card>
+            <p className="text-sm text-white/80 mt-8">{'No credit card required • Setup in under 24 hours'}</p>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
@@ -197,7 +197,7 @@ export default function Page() {
                 <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Back to Top</a></li>
                 <li><a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
                 <li><a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Free Demo</a></li>
+                <li><a href="#cta" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Free Demo</a></li>
               </ul>
             </div>
 

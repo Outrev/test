@@ -106,7 +106,7 @@ export default function Page() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
               ))}
             </div>
             <h2 className="text-4xl md:text-5xl font-thin text-foreground mb-4">Mechanics Who Revved Up Their Business</h2>
@@ -131,17 +131,17 @@ export default function Page() {
                 shop: "Walker's Garage"
               }
             ].map((testimonial, i) => (
-              <Card key={i} className="bg-gradient-to-br from-blue-50 to-cyan-50 border-border">
+              <Card key={i} className="gradient-bg-blue-slate border-none">
                 <CardContent className="p-8">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={j} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
                     ))}
                   </div>
-                  <p className="text-foreground mb-6 leading-relaxed">"{testimonial.quote}"</p>
-                  <div className="border-t border-border pt-4">
-                    <div className="font-bold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.shop}</div>
+                  <p className="text-white mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                  <div className="border-t border-white/20 pt-4">
+                    <div className="font-bold text-white">{testimonial.author}</div>
+                    <div className="text-sm text-white/70">{testimonial.shop}</div>
                   </div>
                 </CardContent>
               </Card>

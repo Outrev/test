@@ -25,17 +25,17 @@ export default function Page() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
+          <h1 className="text-5xl md:text-7xl font-semibold text-foreground mb-6 leading-tight text-balance">
             Your next customer is <span className="gradient-text">calling</span>. Don't miss it.
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 hover:from-blue-600 hover:via-cyan-500 hover:to-teal-500 text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-white text-cyan-600 hover:bg-blue-50 font-bold text-lg px-10 py-7 shadow-lg">
               See How It Works
             </Button>
           </div>
@@ -154,9 +154,9 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 text-balance">
-              {'Start growing your shop with AI today'}
+              Start <span className="gradient-text">growing</span> your shop with <span className="gradient-text">AI</span> today
             </h2>
-            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
               {'Get started with Outrev today and start capturing calls, booking jobs, and growing your shop immediately.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

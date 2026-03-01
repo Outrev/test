@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
@@ -17,8 +17,7 @@ export default function Page() {
           <nav className="hidden md:flex items-center gap-6">
             <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
             <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a>
-            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Get Started</Button>
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Free Demo</Button>
           </nav>
         </div>
       </header>
@@ -26,17 +25,17 @@ export default function Page() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-thin text-foreground mb-6 leading-tight text-balance">
-            {'Your next customer is calling. Don\'t miss it.'}
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
+            Your next customer is <span className="gradient-text">calling</span>. Don't miss it.
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6">
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-muted-foreground/30 hover:bg-muted bg-transparent">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-lg px-10 py-7 shadow-lg">
               See How It Works
             </Button>
           </div>
@@ -151,7 +150,7 @@ export default function Page() {
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 py-20 md:py-32">
+      <section id="cta" className="gradient-bg-blue-slate py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 text-balance">
@@ -168,7 +167,7 @@ export default function Page() {
                 Call 1-888-221-6878
               </Button>
             </div>
-            <p className="text-sm text-white/80 mt-8">{'No credit card required • Setup in under 24 hours'}</p>
+            <p className="text-sm text-white/80 mt-8">{'No contracts. No pressure. Just a test drive.'}</p>
           </div>
         </div>
       </section>

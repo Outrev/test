@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
@@ -17,8 +17,7 @@ export default function Page() {
           <nav className="hidden md:flex items-center gap-6">
             <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
             <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a>
-            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Get Started</Button>
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Free Demo</Button>
           </nav>
         </div>
       </header>
@@ -26,19 +25,17 @@ export default function Page() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-thin text-foreground mb-6 leading-tight text-balance">
-            {'Never miss another '}
-            <span className="gradient-text">customer call</span>
-            {' or appointment'}
+          <h1 className="text-5xl md:text-7xl font-semibold text-foreground mb-6 leading-tight text-balance">
+            Your next customer is <span className="gradient-text">calling</span>. Don't miss it.
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            {'AI-powered communication platform built for mechanic shops. Handle bookings, answer calls, and engage customers 24/7—all automated.'}
+            {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6">
+            <Button size="lg" className="bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 hover:from-blue-600 hover:via-cyan-500 hover:to-teal-500 text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-muted-foreground/30 hover:bg-muted bg-transparent">
+            <Button size="lg" className="bg-white text-cyan-600 hover:bg-blue-50 font-bold text-lg px-10 py-7 shadow-lg">
               See How It Works
             </Button>
           </div>
@@ -65,9 +62,9 @@ export default function Page() {
       {/* Features Section */}
       <section id="features" className="container mx-auto px-4 py-20 md:py-32">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-thin gradient-text mb-4">Everything your shop needs</h2>
+          <h2 className="text-4xl md:text-5xl font-thin gradient-text mb-4">Tools that handle the office, so you can focus on the bays.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {'Streamline operations and increase revenue with our comprehensive platform'}
+            {'Fill your bays, capture every call, and grow your shop—without extra staff. Our AI works behind the scenes so you can focus on what you do best.'}
           </p>
         </div>
 
@@ -76,7 +73,7 @@ export default function Page() {
             {
               icon: Phone,
               title: "AI Voice Answering",
-              description: "Never miss a call again. Our AI answers customer inquiries, schedules appointments, and provides quotes—day or night."
+              description: "Our AI answers calls 24/7, captures customer details, and books appointments for you— so no opportunity is lost when you're busy in the bay or closed for the day."
             },
             {
               icon: Calendar,
@@ -86,7 +83,7 @@ export default function Page() {
             {
               icon: Globe,
               title: "Optimize Website & SEO",
-              description: "Boost your online visibility with AI-optimized website content and SEO recommendations tailored for auto repair shops."
+              description: "We optimize your website and Google presence so your shop ranks higher, loads faster, and turns searches into real customers—not just clicks."
             }
           ].map((feature, i) => (
             <Card key={i} className="gradient-bg-blue-slate border-none">
@@ -108,11 +105,11 @@ export default function Page() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-primary text-primary" />
+                <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
               ))}
             </div>
-            <h2 className="text-4xl md:text-5xl font-thin text-foreground mb-4">Trusted by shop owners nationwide</h2>
-            <p className="text-xl text-muted-foreground">{'See how Outrev is transforming mechanic shops'}</p>
+            <h2 className="text-4xl md:text-5xl font-thin text-foreground mb-4">Mechanics Who Revved Up Their Business</h2>
+            <p className="text-xl text-muted-foreground">{'See how independent mechanics are filling bays, capturing more calls, and growing their business with Outrev.'}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -133,17 +130,17 @@ export default function Page() {
                 shop: "Walker's Garage"
               }
             ].map((testimonial, i) => (
-              <Card key={i} className="bg-card border-border">
+              <Card key={i} className="gradient-bg-blue-slate border-none">
                 <CardContent className="p-8">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                      <Star key={j} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
                     ))}
                   </div>
-                  <p className="text-foreground mb-6 leading-relaxed">"{testimonial.quote}"</p>
-                  <div className="border-t border-border pt-4">
-                    <div className="font-bold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.shop}</div>
+                  <p className="text-white mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                  <div className="border-t border-white/20 pt-4">
+                    <div className="font-bold text-white">{testimonial.author}</div>
+                    <div className="text-sm text-white/70">{testimonial.shop}</div>
                   </div>
                 </CardContent>
               </Card>
@@ -153,66 +150,73 @@ export default function Page() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32">
-        <Card className="bg-gradient-to-br from-card to-secondary border-border">
-          <CardContent className="p-12 md:p-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-thin text-foreground mb-6 text-balance">
-              {'Ready to transform your mechanic shop?'}
+      <section id="cta" className="gradient-bg-blue-slate py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 text-balance">
+              Start <span className="gradient-text">growing</span> your shop with <span className="gradient-text">AI</span> today
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              {'Join thousands of shops already using Outrev to increase revenue and improve customer satisfaction.'}
+            <p className="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+              {'Get started with Outrev today and start capturing calls, booking jobs, and growing your shop immediately.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6">
+              <Button size="lg" className="bg-white hover:bg-white/90 text-blue-600 font-bold text-lg px-10 py-7">
                 Schedule Your Free Demo
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-muted-foreground/30 hover:bg-muted bg-transparent">
-                Call (877) 555-0123
+              <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-2 border-white text-lg px-10 py-7">
+                Call 1-888-221-6878
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-6">{'No credit card required • Setup in under 24 hours'}</p>
-          </CardContent>
-        </Card>
+            <p className="text-sm text-white/80 mt-8">{'No contracts. No pressure. Just a test drive.'}</p>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-border">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            {/* Logo Section */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                   <span className="text-primary-foreground font-bold text-sm">O</span>
                 </div>
                 <span className="text-lg font-bold text-foreground">Outrev</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                {'AI-powered communication for the modern mechanic shop.'}
+                {'AI made easy for your mechanic shop'}
               </p>
             </div>
+
+            {/* Navigation Links */}
             <div>
-              <h3 className="font-bold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Case Studies</a></li>
+              <h3 className="font-bold text-foreground mb-4">Quick Links</h3>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Back to Top</a></li>
+                <li><a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
+                <li><a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a></li>
+                <li><a href="#cta" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Free Demo</a></li>
               </ul>
             </div>
+
+            {/* Contact Section */}
             <div>
-              <h3 className="font-bold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-foreground mb-4">Support</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">API Docs</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
-              </ul>
+              <h3 className="font-bold text-foreground mb-4">Contact Us</h3>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <a href="tel:1-888-221-6878" className="text-sm font-medium text-foreground hover:text-primary transition-colors">1-888-221-6878</a>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <a href="mailto:info@outrev.com" className="text-sm font-medium text-foreground hover:text-primary transition-colors">info@outrev.com</a>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Website</p>
+                  <a href="https://outrev.com" className="text-sm font-medium text-foreground hover:text-primary transition-colors">outrev.com</a>
+                </div>
+              </div>
             </div>
           </div>
           <div className="border-t border-border pt-8 text-center">

@@ -165,7 +165,7 @@ export default function Page() {
                 Schedule Your Free Demo
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-muted-foreground/30 hover:bg-muted bg-transparent">
-                Call (877) 555-0123
+                Call 1-888-221-6878
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">{'No credit card required • Setup in under 24 hours'}</p>
@@ -175,42 +175,49 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="border-t border-border">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            {/* Logo Section */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                   <span className="text-primary-foreground font-bold text-sm">O</span>
                 </div>
                 <span className="text-lg font-bold text-foreground">Outrev</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                {'AI-powered communication for the modern mechanic shop.'}
+                {'AI made easy for your mechanic shop'}
               </p>
             </div>
+
+            {/* Navigation Links */}
             <div>
-              <h3 className="font-bold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Case Studies</a></li>
+              <h3 className="font-bold text-foreground mb-4">Quick Links</h3>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Back to Top</a></li>
+                <li><a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
+                <li><a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Free Demo</a></li>
               </ul>
             </div>
+
+            {/* Contact Section */}
             <div>
-              <h3 className="font-bold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-foreground mb-4">Support</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">API Docs</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
-              </ul>
+              <h3 className="font-bold text-foreground mb-4">Contact Us</h3>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <a href="tel:1-888-221-6878" className="text-sm font-medium text-foreground hover:text-primary transition-colors">1-888-221-6878</a>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <a href="mailto:info@outrev.com" className="text-sm font-medium text-foreground hover:text-primary transition-colors">info@outrev.com</a>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Website</p>
+                  <a href="https://outrev.com" className="text-sm font-medium text-foreground hover:text-primary transition-colors">outrev.com</a>
+                </div>
+              </div>
             </div>
           </div>
           <div className="border-t border-border pt-8 text-center">

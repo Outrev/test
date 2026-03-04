@@ -1,13 +1,25 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Calendar, MessageSquare, Globe, Star } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function Page() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className={`sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+        <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">O</span>
@@ -15,9 +27,20 @@ export default function Page() {
             <span className="text-xl font-bold text-foreground">Outrev</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Free Demo</Button>
+            {!isScrolled && (
+              <>
+                <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
+                <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a>
+              </>
+            )}
+            <Button size={isScrolled ? "sm" : "sm"} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              {isScrolled ? 'Book a Free Demo' : 'Free Demo'}
+            </Button>
+            {isScrolled && (
+              <Button size="sm" variant="outline" className="text-sm text-muted-foreground hover:text-foreground transition-colors border-border">
+                See How It Works
+              </Button>
+            )}
           </nav>
         </div>
       </header>
@@ -32,10 +55,10 @@ export default function Page() {
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 hover:from-blue-600 hover:via-cyan-500 hover:to-teal-500 text-white font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
-            <Button size="lg" className="bg-white text-cyan-600 hover:bg-blue-50 font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50 font-bold text-lg px-10 py-7 shadow-lg">
               See How It Works
             </Button>
           </div>
@@ -154,7 +177,7 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 text-balance">
-              Start <span className="gradient-text">growing</span> your shop with <span className="gradient-text">AI</span> today
+              Start <span className="gradient-text-yellow">growing</span> your shop with <span className="gradient-text-yellow">AI</span> today
             </h2>
             <p className="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
               {'Get started with Outrev today and start capturing calls, booking jobs, and growing your shop immediately.'}

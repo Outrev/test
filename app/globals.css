@@ -18,6 +18,13 @@ body {
     background-clip: text;
   }
   
+  .gradient-text-yellow {
+    background: linear-gradient(to right, rgb(253 224 71) 0%, rgb(254 240 138) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
   .gradient-bg-blue-slate {
     background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
   }

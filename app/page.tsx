@@ -65,7 +65,7 @@ export default function Page() {
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#1100bb] hover:bg-[#0d007a] text-white font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-gradient-to-r from-[#1100bb] to-[#1a00ff] hover:from-[#0d007a] hover:to-[#140099] text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
             <Button size="lg" className="bg-white text-[#1100bb] hover:bg-gray-50 font-bold text-lg px-10 py-7 shadow-lg">

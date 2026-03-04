@@ -19,7 +19,7 @@ body {
   }
   
   .gradient-text-yellow {
-    background: linear-gradient(to right, rgb(253 224 71) 0%, rgb(254 240 138) 100%);
+    background: linear-gradient(to right, #1100bb 0%, #1100bb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

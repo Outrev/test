@@ -48,7 +48,15 @@ export default function Page() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32">
+      <section className="relative py-20 md:py-32 min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-40"
+            style={{backgroundImage: "url('/mechanic-shop-hero.jpg')"}}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-semibold text-foreground mb-6 leading-tight text-balance">
             Your next customer is <span className="gradient-text">calling</span>. Don't miss it.
@@ -57,13 +65,14 @@ export default function Page() {
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-[#1100bb] hover:bg-[#0d007a] text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50 font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-white text-[#1100bb] hover:bg-gray-50 font-bold text-lg px-10 py-7 shadow-lg">
               See How It Works
             </Button>
           </div>
+        </div>
         </div>
       </section>
 
@@ -185,7 +194,7 @@ export default function Page() {
               {'Get started with Outrev today and start capturing calls, booking jobs, and growing your shop immediately.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white hover:bg-white/90 text-blue-600 font-bold text-lg px-10 py-7">
+              <Button size="lg" className="bg-white hover:bg-gray-50 text-[#1100bb] font-bold text-lg px-10 py-7">
                 Schedule Your Free Demo
               </Button>
               <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-2 border-white text-lg px-10 py-7">

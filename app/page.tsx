@@ -84,7 +84,7 @@ export default function Page() {
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">{stat.value}</div>
-              <div className="text-lg md:text-xl font-semibold text-[#1100bb]">{stat.label}</div>
+              <div className="text-lg md:text-xl font-semibold text-white">{stat.label}</div>
             </div>
           ))}
         </div>

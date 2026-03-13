@@ -19,11 +19,11 @@ body {
   }
   
   .gradient-text-yellow {
-    background: linear-gradient(135deg, #1100bb 0%, #1a00ff 100%);
+    background: linear-gradient(to bottom, white 0%, #1100bb 50%, white 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 8px rgba(17, 0, 187, 0.5)) drop-shadow(0 2px 4px rgba(17, 0, 187, 0.3));
+    filter: drop-shadow(0 0 6px rgba(17, 0, 187, 0.3));
     font-weight: bold;
   }
   

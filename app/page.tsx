@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className={`sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+      <header className={`sticky top-0 z-50 border-b border-border backdrop-blur transition-all duration-300 ${isScrolled ? 'py-2 bg-background/50' : 'py-4 bg-background/95'}`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
@@ -59,7 +59,7 @@ export default function Page() {
         <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-semibold text-foreground mb-6 leading-tight text-balance">
-            Your next customer is <span className="gradient-text">calling</span>. Don't miss it.
+            Your next customer is calling. <span className="gradient-text">Don't miss it.</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}

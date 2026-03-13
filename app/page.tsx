@@ -23,10 +23,7 @@ export default function Page() {
       <header className={`sticky top-0 z-50 border-b border-border backdrop-blur transition-all duration-300 ${isScrolled ? 'py-2 bg-background/50' : 'py-4 bg-background/95'}`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">O</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Outrev</span>
+            <img src="/outrev-logo.png" alt="Outrev" className="h-10 w-auto" />
           </div>
           <nav className="hidden md:flex items-center gap-6">
             {!isScrolled && (
@@ -87,7 +84,7 @@ export default function Page() {
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-lg md:text-xl font-semibold text-[#1100bb]">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -212,12 +209,7 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             {/* Logo Section */}
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">O</span>
-                </div>
-                <span className="text-lg font-bold text-foreground">Outrev</span>
-              </div>
+              <img src="/outrev-logo.png" alt="Outrev" className="h-12 w-auto mb-3" />
               <p className="text-sm text-muted-foreground">
                 {'AI made easy for your mechanic shop'}
               </p>

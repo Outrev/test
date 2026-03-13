@@ -76,17 +76,22 @@ export default function Page() {
       {/* Stats Section */}
       <section className="container mx-auto px-4 py-16 border-y border-border">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { value: "2,200+", label: "Shops using Outrev" },
-            { value: "98%", label: "Call answer rate" },
-            { value: "40%", label: "More bookings" },
-            { value: "24/7", label: "AI availability" }
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">{stat.value}</div>
-              <div className="text-lg md:text-xl font-semibold text-white">{stat.label}</div>
-            </div>
-          ))}
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">2,200+</div>
+            <div className="text-lg md:text-xl font-semibold text-white">Shops using Outrev</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">98%</div>
+            <div className="text-lg md:text-xl font-semibold text-white">Call answer rate</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">40%</div>
+            <div className="text-lg md:text-xl font-semibold text-white">More bookings</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">24/7</div>
+            <div className="text-lg md:text-xl font-semibold text-white">AI availability</div>
+          </div>
         </div>
       </section>
 

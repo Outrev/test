@@ -1,61 +1,99 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Calendar, MessageSquare, Globe, Star } from "lucide-react"
+import { useEffect, useState } from "react"
+import { DemoSignupModal } from "@/components/demo-signup-modal"
 
 export default function Page() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [demoModalOpen, setDemoModalOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className={`sticky top-0 z-50 border-b border-border backdrop-blur transition-all duration-300 ${isScrolled ? 'py-2 bg-background/50' : 'py-4 bg-background/95'}`}>
+        <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">O</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Outrev</span>
+            <img src="/outrev-logo.png" alt="Outrev" className="h-10 w-auto" />
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Free Demo</Button>
+            {!isScrolled && (
+              <>
+                <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
+                <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a>
+              </>
+            )}
+            <Button size={isScrolled ? "sm" : "sm"} onClick={() => setDemoModalOpen(true)} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              {isScrolled ? 'Book a Free Demo' : 'Free Demo'}
+            </Button>
+            {isScrolled && (
+              <Button size="sm" variant="outline" className="text-sm text-muted-foreground hover:text-foreground transition-colors border-border">
+                See How It Works
+              </Button>
+            )}
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32">
+      <section className="relative py-20 md:py-32 min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-40"
+            style={{backgroundImage: "url('/mechanic-shop-hero.jpg')"}}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-semibold text-foreground mb-6 leading-tight text-balance">
-            Your next customer is <span className="gradient-text">calling</span>. Don't miss it.
+            Your next customer is calling. <span className="gradient-text">Don't miss it.</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 hover:from-blue-600 hover:via-cyan-500 hover:to-teal-500 text-white font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" onClick={() => setDemoModalOpen(true)} className="bg-gradient-to-r from-[#1100bb] to-[#1a00ff] hover:from-[#0d007a] hover:to-[#140099] text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
-            <Button size="lg" className="bg-white text-cyan-600 hover:bg-blue-50 font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" className="bg-white text-[#1100bb] hover:bg-gray-50 font-bold text-lg px-10 py-7 shadow-lg">
               See How It Works
             </Button>
           </div>
+        </div>
         </div>
       </section>
 
       {/* Stats Section */}
       <section className="container mx-auto px-4 py-16 border-y border-border">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { value: "2,200+", label: "Shops using Outrev" },
-            { value: "98%", label: "Call answer rate" },
-            { value: "40%", label: "More bookings" },
-            { value: "24/7", label: "AI availability" }
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">2,200+</div>
+            <div className="text-lg md:text-xl font-semibold text-white">Shops using Outrev</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">98%</div>
+            <div className="text-lg md:text-xl font-semibold text-white">Call answer rate</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">40%</div>
+            <div className="text-lg md:text-xl font-semibold text-white">More bookings</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">24/7</div>
+            <div className="text-lg md:text-xl font-semibold text-white">AI availability</div>
+          </div>
         </div>
       </section>
 
@@ -154,13 +192,13 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 text-balance">
-              Start <span className="gradient-text">growing</span> your shop with <span className="gradient-text">AI</span> today
+              Start <span className="gradient-text-yellow">growing</span> your shop with <span className="gradient-text-yellow">AI</span> today
             </h2>
             <p className="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
               {'Get started with Outrev today and start capturing calls, booking jobs, and growing your shop immediately.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white hover:bg-white/90 text-blue-600 font-bold text-lg px-10 py-7">
+              <Button size="lg" onClick={() => setDemoModalOpen(true)} className="bg-white hover:bg-gray-50 text-[#1100bb] font-bold text-lg px-10 py-7">
                 Schedule Your Free Demo
               </Button>
               <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-2 border-white text-lg px-10 py-7">
@@ -178,12 +216,7 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             {/* Logo Section */}
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">O</span>
-                </div>
-                <span className="text-lg font-bold text-foreground">Outrev</span>
-              </div>
+              <img src="/outrev-logo.png" alt="Outrev" className="h-12 w-auto mb-3" />
               <p className="text-sm text-muted-foreground">
                 {'AI made easy for your mechanic shop'}
               </p>
@@ -224,6 +257,8 @@ export default function Page() {
           </div>
         </div>
       </footer>
+      
+      <DemoSignupModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />
     </div>
   )
 }

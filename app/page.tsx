@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Calendar, MessageSquare, Globe, Star } from "lucide-react"
 import { useEffect, useState } from "react"
+import { DemoSignupModal } from "@/components/demo-signup-modal"
 
 export default function Page() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [demoModalOpen, setDemoModalOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +34,7 @@ export default function Page() {
                 <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Success Stories</a>
               </>
             )}
-            <Button size={isScrolled ? "sm" : "sm"} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button size={isScrolled ? "sm" : "sm"} onClick={() => setDemoModalOpen(true)} className="bg-primary hover:bg-primary/90 text-primary-foreground">
               {isScrolled ? 'Book a Free Demo' : 'Free Demo'}
             </Button>
             {isScrolled && (
@@ -62,7 +64,7 @@ export default function Page() {
             {'AI made easy for your mechanic shop - streamlining communication, optimizing visibility, and bringing customers to you, so you can focus on what you do best.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-[#1100bb] to-[#1a00ff] hover:from-[#0d007a] hover:to-[#140099] text-white font-bold text-lg px-10 py-7 shadow-lg">
+            <Button size="lg" onClick={() => setDemoModalOpen(true)} className="bg-gradient-to-r from-[#1100bb] to-[#1a00ff] hover:from-[#0d007a] hover:to-[#140099] text-white font-bold text-lg px-10 py-7 shadow-lg">
               Get a Free Demo
             </Button>
             <Button size="lg" className="bg-white text-[#1100bb] hover:bg-gray-50 font-bold text-lg px-10 py-7 shadow-lg">
@@ -196,7 +198,7 @@ export default function Page() {
               {'Get started with Outrev today and start capturing calls, booking jobs, and growing your shop immediately.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white hover:bg-gray-50 text-[#1100bb] font-bold text-lg px-10 py-7">
+              <Button size="lg" onClick={() => setDemoModalOpen(true)} className="bg-white hover:bg-gray-50 text-[#1100bb] font-bold text-lg px-10 py-7">
                 Schedule Your Free Demo
               </Button>
               <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-2 border-white text-lg px-10 py-7">
@@ -255,6 +257,8 @@ export default function Page() {
           </div>
         </div>
       </footer>
+      
+      <DemoSignupModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />
     </div>
   )
 }
